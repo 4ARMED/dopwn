@@ -75,20 +75,28 @@
   revision = "24818f796faf91cd76ec7bddd72458fbced7a6c1"
 
 [[projects]]
+  branch = "master"
+  digest = "1:0778dc7fce1b4669a8bfa7ae506ec1f595b6ab0f8989c1c0d22a8ca1144e9972"
+  name = "github.com/howeyc/gopass"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "bf9dde6d0d2c004a008c27aaee91170c786f6db8"
+
+[[projects]]
+  digest = "1:8eb1de8112c9924d59bf1d3e5c26f5eaa2bfc2a5fcbb92dc1c2e4546d695f277"
+  name = "github.com/imdario/mergo"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "9f23e2d6bd2a77f959b2bf6acdbefd708a83a4a4"
+  version = "v0.3.6"
+
+[[projects]]
   digest = "1:870d441fe217b8e689d7949fef6e43efbc787e50f200cb1e70dbca9204a1d6be"
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   pruneopts = "UT"
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
-
-[[projects]]
-  branch = "master"
-  digest = "1:33525aecd1ee98bb3991e70924cf4cb6cca622b16152d6468016272e953c29bc"
-  name = "github.com/jpbetz/auger"
-  packages = ["pkg/encoding"]
-  pruneopts = "UT"
-  revision = "2ecc2711c43ac933a9ba21ac69b750e3a742ec5c"
 
 [[projects]]
   digest = "1:3e551bbb3a7c0ab2a2bf4660e7fcad16db089fdcfbb44b0199e62838038623ea"
@@ -113,6 +121,14 @@
   packages = ["pkg/logger"]
   pruneopts = "UT"
   revision = "70f8aeca1062afee0b35e76b20587d5a711b555e"
+
+[[projects]]
+  branch = "master"
+  digest = "1:33525aecd1ee98bb3991e70924cf4cb6cca622b16152d6468016272e953c29bc"
+  name = "github.com/marcwickenden/auger"
+  packages = ["pkg/encoding"]
+  pruneopts = "UT"
+  revision = "6efeff1a7ca24b6efab9e8f83a32c5737628d78c"
 
 [[projects]]
   digest = "1:c658e84ad3916da105a761660dcaeb01e63416c8ec7bc62256a9b411a05fcd67"
@@ -172,6 +188,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:38f553aff0273ad6f367cb0a0f8b6eecbaef8dc6cb8b50e57b6a81c1d5b1e332"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  pruneopts = "UT"
+  revision = "505ab145d0a99da450461ae2c1a9f6cd10d1f447"
+
+[[projects]]
+  branch = "master"
   digest = "1:7a2e3d6819e7a97a877f8604e737901c6941e76d56ae98a51a1ca2f13de351fb"
   name = "golang.org/x/net"
   packages = [
@@ -188,11 +212,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:391d584c32997a99b556d2ed9e0333464a2eef452dceba43f8ef65d4bc78731a"
+  digest = "1:21d0d5a534afd0c16c486a72e2dde75b62463938b7517ec8fbc4f98e088465fa"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+  ]
   pruneopts = "UT"
-  revision = "73d4af5aa059c8c2dfcf25aad4efd6ce7bc9adc1"
+  revision = "586ba8c9bb141bbbea1ffb47b201443fd43385dd"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -216,6 +243,14 @@
   pruneopts = "UT"
   revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
   version = "v0.3.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:9fdc2b55e8e0fafe4b41884091e51e77344f7dc511c5acedcfd98200003bff90"
+  name = "golang.org/x/time"
+  packages = ["rate"]
+  pruneopts = "UT"
+  revision = "85acf8d2951cb2a3bde7632f9ff273ef0379bcbd"
 
 [[projects]]
   branch = "master"
@@ -323,9 +358,10 @@
 
 [[projects]]
   branch = "release-1.10"
-  digest = "1:b757345503a1bcbae5ff24a6f3d6b765f478615a2b24a6161b080f520822197e"
+  digest = "1:9c410cba4dff53b601cc4c9697184a871fbdfabd7fd9ef0f8fd6d613930336f9"
   name = "k8s.io/apimachinery"
   packages = [
+    "pkg/api/errors",
     "pkg/api/meta",
     "pkg/api/resource",
     "pkg/apimachinery",
@@ -343,9 +379,11 @@
     "pkg/runtime/serializer/json",
     "pkg/runtime/serializer/protobuf",
     "pkg/runtime/serializer/recognizer",
+    "pkg/runtime/serializer/streaming",
     "pkg/runtime/serializer/versioning",
     "pkg/selection",
     "pkg/types",
+    "pkg/util/clock",
     "pkg/util/errors",
     "pkg/util/framer",
     "pkg/util/intstr",
@@ -357,21 +395,50 @@
     "pkg/util/validation/field",
     "pkg/util/wait",
     "pkg/util/yaml",
+    "pkg/version",
     "pkg/watch",
     "third_party/forked/golang/reflect",
   ]
   pruneopts = "UT"
   revision = "688d824527473e1e3f6c3f0b01171308393bdfe3"
 
+[[projects]]
+  digest = "1:a1ecd068c26ee1d38a6e2db2fe1ab39a3b0534ea022925032e87d1c42028a9cb"
+  name = "k8s.io/client-go"
+  packages = [
+    "pkg/apis/clientauthentication",
+    "pkg/apis/clientauthentication/v1alpha1",
+    "pkg/version",
+    "plugin/pkg/client/auth/exec",
+    "rest",
+    "rest/watch",
+    "tools/auth",
+    "tools/clientcmd",
+    "tools/clientcmd/api",
+    "tools/clientcmd/api/latest",
+    "tools/clientcmd/api/v1",
+    "tools/metrics",
+    "transport",
+    "util/cert",
+    "util/flowcontrol",
+    "util/homedir",
+    "util/integer",
+  ]
+  pruneopts = "UT"
+  revision = "23781f4d6632d88e869066eaebb743857aa1ef9b"
+  version = "v7.0.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/jpbetz/auger/pkg/encoding",
     "github.com/kubicorn/kubicorn/pkg/logger",
+    "github.com/marcwickenden/auger/pkg/encoding",
     "github.com/spf13/cobra",
     "go.etcd.io/etcd/clientv3",
     "gopkg.in/yaml.v2",
+    "k8s.io/client-go/tools/clientcmd",
+    "k8s.io/client-go/tools/clientcmd/api",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
