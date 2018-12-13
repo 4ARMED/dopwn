@@ -73,3 +73,15 @@ func (c *Client) GetValue(key string) ([]byte, error) {
 
 	return []byte(gr.Kvs[0].Value), err
 }
+
+// PutValue inserts a key into etcd
+func (c *Client) PutValue(key string, value []byte) error {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(3)*time.Second)
+	kv := clientv3.NewKV(c.client)
+	_, err := kv.Put(ctx, key, string(value))
+	cancel()
+	if err != nil {
+		return err
+	}
+	return nil
+}
