@@ -61,7 +61,7 @@ $ dopwn exploit -f user-data.txt
 That's it, you're done. You should now have a file called `kubeconfig` in the same directory which you can use to access the cluster.
 
 ```bash
-kubectl --kubeconfig=kubeconfig auth can-i get secrets
+$ kubectl --kubeconfig=kubeconfig auth can-i get secrets
 yes
 ```
 
